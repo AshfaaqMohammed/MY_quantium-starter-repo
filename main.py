@@ -8,7 +8,7 @@ df = df.sort_values(by='date')
 # Initialize the Dash app
 app = Dash(__name__)
 
-# Define the layout of the app
+
 app.layout = html.Div(children=[
     html.H1("Sales Data Visualizer"),
 
