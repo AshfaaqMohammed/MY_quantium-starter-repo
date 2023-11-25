@@ -1,6 +1,6 @@
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import Dash, dcc, html
+# import dash_core_components as dcc
+# import dash_html_components as html
 import pandas as pd
 import plotly.express as px
 
@@ -8,7 +8,7 @@ df = pd.read_csv('formated_data.csv')
 df = df.sort_values(by='date')
 
 # Initialize the Dash app
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 # Define the layout of the app
 app.layout = html.Div(children=[
@@ -16,7 +16,7 @@ app.layout = html.Div(children=[
 
     dcc.Graph(
         id='line-chart',
-        figure=px.line(df, x='date', y='sales', color='region', title='Sales Over Time')
+        figure=px.line(df, x='date', y='sales', title='Sales Over Time')
     )
 ])
 
