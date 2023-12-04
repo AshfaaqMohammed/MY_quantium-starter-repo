@@ -1,11 +1,9 @@
 #!/bin/bash
 
 #VENV_PATH="path" #path to your virtual environment
-#source "${VENV_PATH}/bin/activate" #activate your virtual environment
-#
-#cd /path/to/your/test # Navigate to the directory containing your test.py
+. ./venv/bin/activate
 
-pytest_result=$(pytest) # Run the test suite using pytest
+python -m pytest test_app.py
 
 pytest_exit_code=$?
 
