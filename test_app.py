@@ -17,7 +17,7 @@ s = Service('C:\webrowsers\chromedriver.exe')
 
 def test_header_present():
     driver = webdriver.Chrome(service=s)
-    driver.get("http://127.0.0.1:8050/")  # Replace with the actual URL of your Dash app
+    driver.get("http://127.0.0.1:8050/")
 
     # Check if the header is present
     assert driver.find_element(By.ID, value="header")
@@ -27,7 +27,7 @@ def test_header_present():
 
 def test_visualization_present():
     driver = webdriver.Chrome(service=s)
-    driver.get("http://127.0.0.1:8050/")  # Replace with the actual URL of your Dash app
+    driver.get("http://127.0.0.1:8050/")
 
     # Check if the visualization is present
     assert driver.find_element(By.ID, value="line-chart")
@@ -37,7 +37,7 @@ def test_visualization_present():
 
 def test_region_picker_present():
     driver = webdriver.Chrome(service=s)
-    driver.get("http://127.0.0.1:8050/")  # Replace with the actual URL of your Dash app
+    driver.get("http://127.0.0.1:8050/")
 
     # Check if the region picker is present
     assert driver.find_element(By.ID, value="region-radio")
