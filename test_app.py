@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
-s = Service('C:\webrowsers\chromedriver.exe')
+s = Service('path') #enter your chromdriver.exe path
 
 # driver = webdriver.Chrome(service=s)
 # driver.get("http://127.0.0.1:8050")
