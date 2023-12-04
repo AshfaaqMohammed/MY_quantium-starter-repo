@@ -10,7 +10,11 @@ app = Dash(__name__)
 
 
 app.layout = html.Div(children=[
-    html.H1("Sales Data Visualizer", style={'text-align': 'center'}),
+    html.Div(
+            html.H1("Sales Data Visualizer", id='header', style={'border': '3.5px solid #ddd', 'padding': '10px',
+                                                                 'border-radius': '3px', 'display': 'inline-block'}),
+            style={'text-align': 'center'}
+    ),
     dcc.RadioItems(
             id='region-radio',
             options=[
@@ -22,12 +26,12 @@ app.layout = html.Div(children=[
 
             ],
             value='All',
-            labelStyle={'display': 'inline-block', 'margin-right': '20px'},  # Display options horizontally with spacing
-            style={'display': 'flex', 'flex-direction': 'row', 'justify-content': 'center', 'border': '1px solid #ddd', 'padding': '10px', 'border-radius': '5px'},  # Center the group and add a box around it
+            labelStyle={'display': 'inline-block', 'margin-right': '20px', 'border': '3.5px solid #ddd','padding': '10px', 'border-radius': '5px'},  # Display options horizontally with spacing
+            style={'display': 'flex', 'flex-direction': 'row', 'justify-content': 'center'},  # Center the group and add a box around it
         ),
     dcc.Graph(
         id='line-chart',
-        figure=px.line(df, x='date', y='sales',color='region', title='Sales Over Time')
+        figure=px.line(df, x='date', y='sales').update_layout(title_text='Sales Over Time', title_x=0.5)
     )
 ])
 
