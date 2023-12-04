@@ -11,9 +11,10 @@ app = Dash(__name__)
 
 app.layout = html.Div(children=[
     html.Div(
-            html.H1("Sales Data Visualizer", id='header', style={'border': '3.5px solid #ddd', 'padding': '10px',
+            html.H1("Sales Data Visualizer", style={'border': '3.5px solid #ddd', 'padding': '10px',
                                                                  'border-radius': '3px', 'display': 'inline-block'}),
-            style={'text-align': 'center'}
+            style={'text-align': 'center'},
+            id='header'
     ),
     dcc.RadioItems(
             id='region-radio',

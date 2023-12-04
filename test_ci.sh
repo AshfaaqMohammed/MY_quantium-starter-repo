@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #VENV_PATH="path" #path to your virtual environment
-. ./venv/bin/activate
+#. ./venv/bin/activate
 
 python -m pytest test_app.py
 

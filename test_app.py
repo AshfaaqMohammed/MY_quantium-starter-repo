@@ -1,7 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
-s = Service('path') #enter your chromdriver.exe path
+from selenium.webdriver.support.ui import WebDriverWait
+s = Service('C:\webrowsers\chromedriver.exe')
 
 # driver = webdriver.Chrome(service=s)
 # driver.get("http://127.0.0.1:8050")
@@ -20,6 +21,7 @@ def test_header_present():
     driver.get("http://127.0.0.1:8050/")
 
     # Check if the header is present
+    wait = WebDriverWait(driver, timeout=10)
     assert driver.find_element(By.ID, value="header")
 
     driver.quit()
@@ -30,6 +32,7 @@ def test_visualization_present():
     driver.get("http://127.0.0.1:8050/")
 
     # Check if the visualization is present
+    wait = WebDriverWait(driver, timeout=10)
     assert driver.find_element(By.ID, value="line-chart")
 
     driver.quit()
@@ -40,6 +43,7 @@ def test_region_picker_present():
     driver.get("http://127.0.0.1:8050/")
 
     # Check if the region picker is present
+    wait = WebDriverWait(driver, timeout=10)
     assert driver.find_element(By.ID, value="region-radio")
 
     driver.quit()
